@@ -11,11 +11,11 @@ ADOVMS_VER="4.0"
 ROUNDCUBE="1.3.8"
 
 # Repositories
-REPO_GF="http://mirror.ghettoforge.org/distributions/gf/gf-release-latest.gf.el7.noarch.rpm"
+## REMOTION ??? REPO_GF="http://mirror.ghettoforge.org/distributions/gf/gf-release-latest.gf.el7.noarch.rpm"
 
 # Extra packages
 MAIL_PACKAGES="postfix3 postfix3-cdb postfix3-mysql postfix3-pcre postfix3-perl-scripts postfix3-sqlite dovecot22 dovecot22-mysql dovecot22-pigeonhole clamav-filesystem clamav-server clamav-update clamav-milter-systemd clamav-data clamav-server-systemd clamav-scanner-systemd clamav clamav-milter clamav-lib clamav-scanner"
-EXTRA_PACKAGES="opendkim git subversion libicu"
+EXTRA_PACKAGES="opendkim git subversion libicu  clamav clamav-scanner-systemd"
 
 # PEAR packages
 PEAR="Net_IDNA2 Mail_mime Mail_mimeDecode Net_LDAP3 Auth_SASL Net_SMTP"
