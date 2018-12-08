@@ -8,7 +8,7 @@
 ADOVMS_VER="4.0"
 
 # Roundcube version
-ROUNDCUBE="1.3.4"
+ROUNDCUBE="1.3.8"
 
 # Repositories
 REPO_GF="http://mirror.ghettoforge.org/distributions/gf/gf-release-latest.gf.el7.noarch.rpm"
@@ -231,10 +231,11 @@ if [ "${mail_install}" == "y" ];then
     echo
     pear config-set preferred_state alpha >/dev/null 2>&1
     pear install ${PEAR} >/dev/null 2>&1
+    yum -y install yum-utils
     yum -q -y install epel-release
     yum -q -y install ${REPO_GF}
     yum --enablerepo=gf-plus -y install ${MAIL_PACKAGES}
-    yum --enablerepo=epel-testing -y install ${EXTRA_PACKAGES} 
+    yum-config-manager --disable epel ; yum --enablerepo=epel-testing -y install ${EXTRA_PACKAGES} 
     echo
     echo
     rpm --quiet -q postfix3
