@@ -271,7 +271,7 @@ echo
 echo -n "---> Download and configure ViMbAdmin 3? [y/n][n]:"
 read vmb_down
 if [ "${vmb_down}" == "y" ];then
-     read -e -p "---> Edit your installation folder full path: " -i "/var/www/html/vimbadmin" VMB_PATH
+     read -e -p "---> Edit your installation folder full path: " -i "/home/vhost/public_html/vimbadmin" VMB_PATH
         echo
         echo "  ViMbAdmin will be installed into:" 
 		GREENTXT ${VMB_PATH}
@@ -317,7 +317,7 @@ echo
 echo -n "---> Download and configure ROUNDCUBE v${ROUNDCUBE}? [y/n][n]:"
 read rcb_down
 if [ "${rcb_down}" == "y" ];then
-     read -e -p "---> Edit your installation folder full path: " -i "/var/www/html/roundcube" RCB_PATH
+     read -e -p "---> Edit your installation folder full path: " -i "/home/vhost/public_html/roundcube" RCB_PATH
         echo
         echo "  ROUNDCUBE will be installed into:" 
 		GREENTXT ${RCB_PATH}
@@ -363,7 +363,7 @@ echo -n "---> Generate ViMbAdmin strong password? [y/n][n]:"
 read vmb_pass_gen
 if [ "${vmb_pass_gen}" == "y" ];then
    echo
-     VMB_PASSGEN=$(head -c 500 /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1)
+     VMB_PASSGEN=$(head -c 500 /dev/urandom | tr -dc 'a-zA-Z0-9`~!@#$%^&*()_+-={}[]|;<,>.?/' | fold -w 15 | head -n 1)
      WHITETXT "ViMbAdmin database password: ${RED}${VMB_PASSGEN}"
      YELLOWTXT "!REMEMBER IT AND KEEP IT SAFE!"
 fi
@@ -393,7 +393,7 @@ echo -n "---> Generate ROUNDCUBE strong password? [y/n][n]:"
 read rcb_pass_gen
 if [ "${rcb_pass_gen}" == "y" ];then
    echo
-     RCB_PASSGEN=$(head -c 500 /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1)
+     RCB_PASSGEN=$(head -c 500 /dev/urandom | tr -dc 'a-zA-Z0-9`~!@#$%^&*()_+-={}[]|;<,>.?/' | fold -w 15 | head -n 1)
      WHITETXT "ROUNDCUBE database password: ${RED}${RCB_PASSGEN}"
      YELLOWTXT "!REMEMBER IT AND KEEP IT SAFE!"
 fi
