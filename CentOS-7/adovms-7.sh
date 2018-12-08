@@ -11,7 +11,7 @@ ADOVMS_VER="4.0"
 ROUNDCUBE="1.3.8"
 
 # Repositories
-## REMOTION ??? REPO_GF="http://mirror.ghettoforge.org/distributions/gf/gf-release-latest.gf.el7.noarch.rpm"
+REPO_GF="http://mirror.ghettoforge.org/distributions/gf/gf-release-latest.gf.el7.noarch.rpm"
 
 # Extra packages
 MAIL_PACKAGES="postfix3 postfix3-cdb postfix3-mysql postfix3-pcre postfix3-perl-scripts postfix3-sqlite dovecot22 dovecot22-mysql dovecot22-pigeonhole"
@@ -235,7 +235,7 @@ if [ "${mail_install}" == "y" ];then
     yum -q -y install epel-release
     yum -q -y install ${REPO_GF}
     yum --enablerepo=gf-plus -y install ${MAIL_PACKAGES}
-    yum-config-manager --disable epel ; yum --enablerepo=epel-testing -y install ${EXTRA_PACKAGES} 
+    yum-config-manager --disable epel ; yum --enablerepo=epel -y install ${EXTRA_PACKAGES} 
     echo
     echo
     rpm --quiet -q postfix3
