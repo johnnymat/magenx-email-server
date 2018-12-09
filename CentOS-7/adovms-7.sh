@@ -231,7 +231,7 @@ if [ "${mail_install}" == "y" ];then
     echo
     pear config-set preferred_state alpha >/dev/null 2>&1
     pear install ${PEAR} >/dev/null 2>&1
-    yum -y install yum-utils
+    yum remove dovecot postfix; yum -y install yum-utils
     yum -q -y install epel-release
     yum -q -y install ${REPO_GF}
     yum --enablerepo=gf-plus -y install ${MAIL_PACKAGES}
